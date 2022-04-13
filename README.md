@@ -48,6 +48,10 @@ venv ❯ python3 -m django --version
 (venv) $ pip install autopep8
 ```
 
+## .vscode/settings.json を設定
+
+## .unibeautifyrc.json を設定
+
 ## startproject
 
 ```
