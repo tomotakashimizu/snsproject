@@ -29,3 +29,7 @@ def loginfunc(request):
         else:
             return render(request, 'login.html', {'context': 'not logged in'})
     return render(request, 'login.html', {'context': 'get method'})
+
+
+def listfunc(request):
+    return render(request, 'list.html', {})
