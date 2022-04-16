@@ -5,10 +5,5 @@ from django.contrib.auth.models import User
 
 
 def signupfunc(request):
-    object = User.objects.get(username='tomo')
-    print(object.email)
-    if request.method == "POST":
-        print('this is post method')
-    else:
-        print('this is not post method')
+    print(request.POST)
     return render(request, 'signup.html', {'some': 100})
