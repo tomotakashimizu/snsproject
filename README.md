@@ -45,12 +45,21 @@ venv ❯ python3 -m django --version
 # Pythonのフォーマッタをインストール
 # https://qiita.com/psychoroid/items/2c2acc06c900d2c0c8cb
 (venv) $ pip install flake8
-(venv) $ pip install autopep8
+# https://zenn.dev/yhay81/articles/yhay81-202102-pythonlint
+(venv) $ pip install black
+(venv) $ pip install tox
+(venv) $ pip install isort
+(venv) $ pip install mypy
+(venv) $ pip install bandit
 ```
 
 ## .vscode/settings.json を設定
 
 ## .unibeautifyrc.json を設定
+
+## tox.ini を設定
+
+## setup.cfg を設定
 
 ## startproject
 
