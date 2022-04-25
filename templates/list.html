@@ -7,14 +7,18 @@
 {% endblock header %}
 
 {% block content %}
-  <div class="container">
-    {% for item in object_list %}
-      <div class="alert alert-success" role="alert">
-        <p>タイトル：{{ item.title }}</p>
-        <p>投稿者：{{ item.author }}</p>
-        <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
-        <a href="#" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Link</a>
-      </div>
-    {% endfor %}
-  </div>
+  {% comment %} {% if user.is_authenticated %} {% endcomment %}
+    <div class="container">
+      {% for item in object_list %}
+        <div class="alert alert-success" role="alert">
+          <p>タイトル：{{ item.title }}</p>
+          <p>投稿者：{{ item.author }}</p>
+          <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
+          <a href="#" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Link</a>
+        </div>
+      {% endfor %}
+    </div>
+  {% comment %} {% else %}
+    please login
+  {% endif %} {% endcomment %}
 {% endblock content %}

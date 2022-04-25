@@ -1,7 +1,8 @@
 from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db import IntegrityError
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 
 from .models import SnsModel
 
@@ -27,12 +28,14 @@ def loginfunc(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return render(request, "login.html", {"context": "logged in"})
+            return redirect("list")
         else:
-            return render(request, "login.html", {"context": "not logged in"})
-    return render(request, "login.html", {"context": "get method"})
+            return render(request, "login.html", {})
+    return render(request, "login.html", {})
 
 
+# ログイン状態判定し画面遷移
+@login_required
 def listfunc(request):
     object_list = SnsModel.objects.all()
     return render(request, "list.html", {"object_list": object_list})
