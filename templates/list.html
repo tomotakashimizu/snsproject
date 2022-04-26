@@ -13,8 +13,8 @@
         <div class="alert alert-success" role="alert">
           <p>タイトル：<a href="{% url 'detail' item.pk %}">{{ item.title }}</a></p>
           <p>投稿者：{{ item.author }}</p>
-          <a href="#" class="btn btn-primary" tabindex="-1" role="button" aria-disabled="true">Primary link</a>
-          <a href="#" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Link</a>
+          <a href="#" class="btn btn-primary disabled" tabindex="-1" role="button" aria-disabled="true">いいね{{ item.good }}件</a>
+          <a href="#" class="btn btn-secondary disabled" tabindex="-1" role="button" aria-disabled="true">既読{{ item.read }}人</a>
         </div>
       {% endfor %}
       <a href="{% url 'logout' %}">logout</a>

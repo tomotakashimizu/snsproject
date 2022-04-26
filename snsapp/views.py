@@ -47,5 +47,13 @@ def logoutfunc(request):
 
 
 def detailfunc(request, pk):
+    # object取得は一般的に get_object_or_404 が使われる
     object = get_object_or_404(SnsModel, pk=pk)
     return render(request, "detail.html", {"object": object})
+
+
+def goodfunc(request, pk):
+    object = SnsModel.objects.get(pk=pk)
+    object.good += 1
+    object.save()
+    return redirect("list")
