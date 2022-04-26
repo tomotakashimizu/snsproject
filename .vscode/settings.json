@@ -3,6 +3,9 @@
     "editor.tabSize": 2,
     "editor.formatOnSave": true
   },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
   "files.associations": {
     "**/*.html": "html",
     "**/templates/**/*.html": "django-html",
@@ -29,15 +32,10 @@
   "python.linting.flake8Enabled": true,
   "python.linting.lintOnSave": true,
   "python.languageServer": "Pylance",
-  // "python.formatting.provider": "autopep8",
   "python.formatting.provider": "black",
-  //"python.linting.flake8Args": ["--max-line-length 119"],
-  "python.linting.flake8Args": ["--ignore=E501", "--ignore=W503"],
+  "python.linting.flake8Args": ["--ignore=E501,W503"],
   "python.analysis.diagnosticSeverityOverrides": {
     "reportGeneralTypeIssues": "none"
-  },
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": true
   },
   "python.linting.mypyEnabled": true,
   "python.analysis.completeFunctionParens": true,

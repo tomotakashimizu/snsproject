@@ -1,14 +1,6 @@
 from django.urls import path
 
-from .views import (
-    detailfunc,
-    goodfunc,
-    listfunc,
-    loginfunc,
-    logoutfunc,
-    readfunc,
-    signupfunc,
-)
+from .views import detailfunc, goodfunc, listfunc, loginfunc, logoutfunc, readfunc, signupfunc
 
 urlpatterns = [
     path("signup/", signupfunc, name="signup"),
