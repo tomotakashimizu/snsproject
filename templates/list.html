@@ -17,6 +17,7 @@
           <a href="#" class="btn btn-secondary" tabindex="-1" role="button" aria-disabled="true">Link</a>
         </div>
       {% endfor %}
+      <a href="{% url 'logout' %}">logout</a>
     </div>
   {% comment %} {% else %}
     please login
