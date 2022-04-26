@@ -1,6 +1,14 @@
 from django.urls import path
 
-from .views import detailfunc, goodfunc, listfunc, loginfunc, logoutfunc, signupfunc
+from .views import (
+    detailfunc,
+    goodfunc,
+    listfunc,
+    loginfunc,
+    logoutfunc,
+    readfunc,
+    signupfunc,
+)
 
 urlpatterns = [
     path("signup/", signupfunc, name="signup"),
@@ -9,4 +17,5 @@ urlpatterns = [
     path("detail/<int:pk>", detailfunc, name="detail"),
     path("logout/", logoutfunc, name="logout"),
     path("good/<int:pk>", goodfunc, name="good"),
+    path("read/<int:pk>", readfunc, name="read"),
 ]

@@ -57,3 +57,15 @@ def goodfunc(request, pk):
     object.good += 1
     object.save()
     return redirect("list")
+
+
+def readfunc(request, pk):
+    object = SnsModel.objects.get(pk=pk)
+    username = request.user.get_username()
+    if username in object.readtext:
+        return redirect("list")
+    else:
+        object.read += 1
+        object.readtext = object.readtext + " " + username
+        object.save()
+        return redirect("list")
