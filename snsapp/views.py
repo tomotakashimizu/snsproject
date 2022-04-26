@@ -2,7 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db import IntegrityError
-from django.shortcuts import redirect, render
+from django.shortcuts import get_object_or_404, redirect, render
 
 from .models import SnsModel
 
@@ -44,3 +44,8 @@ def listfunc(request):
 def logoutfunc(request):
     logout(request)
     return redirect("login")
+
+
+def detailfunc(request, pk):
+    object = get_object_or_404(SnsModel, pk=pk)
+    return render(request, "detail.html", {"object": object})
