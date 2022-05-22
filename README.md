@@ -51,6 +51,9 @@ venv ❯ python3 -m django --version
 (venv) $ pip install isort
 (venv) $ pip install mypy
 (venv) $ pip install bandit
+
+# ImageFieldを使えるようにするため
+(venv) $ python -m pip install Pillow
 ```
 
 ## .vscode/settings.json を設定
